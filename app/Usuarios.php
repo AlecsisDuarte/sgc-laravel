@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Usuarios extends Model
 {
-    public function buscarUsuario($username)
+    public function buscar($username)
     {
       return Usuarios::where('username',$username);
+
     }
 }

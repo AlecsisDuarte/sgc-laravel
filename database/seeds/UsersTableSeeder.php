@@ -11,13 +11,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-      // $user = factory(App\User::class)->make();
-      // var_dump($user);
       DB::table('users')->update(
         array(
-          'password' => Hash::make('alexisduarte'),
+          'password' => Hash::make('alexis'),
           'remember_token' => str_random(10)
         )
-    );
+      );
     }
 }

@@ -16,10 +16,11 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Inicio</a>
+                        <a href="{{ url('/inicio') }}">Inicio</a>
+                        <a href="{{ url('/cerrarSesion') }}">Cerrar Sesion</a>
+
                     @else
-                        <a href="{{ url('/login') }}">Iniciar Sesion</a>
-                        <!-- <a href="{{ url('/register') }}">Registrarme</a> -->
+                        <a href="{{ url('/iniciarSesion') }}">Iniciar Sesion</a>
                     @endif
                 </div>
             @endif
@@ -27,14 +28,6 @@
             <div class="content">
                 <div class="title m-b-md">
                   Sistema de Gestión de Curso
-                </div>
-
-                 <div class="links">
-                    <!-- <a href="https://laravel.com/docs">Documentación</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a> -->
                 </div>
             </div>
         </div>

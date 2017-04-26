@@ -9,46 +9,66 @@
 
   <title>Iniciar Sesion</title>
   @include('plantillas.welcome')
-  @include('plantillas.navbar')
+  
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
-  <form action="/login" method="POST">
+  <form action="/iniciarSesion" method="POST">
     {{ csrf_field()}}
     <div class="flex-center position-ref full-height">
       <div class="top-right links">
-              <a href="{{ url('/') }}">Regresar</a>
-            </div>
+        <a href="{{ url('/') }}"><span class="glyphicon glyphicon-arrow-left"></span>Regresar</a>
+      </div>
       <div class="content">
         <div class="sub-title m-b-md">
           Iniciar Sesion
         </div>
 
+        @if($errors->has('message'))
+          <div class="row">
+            <div class="col-md-12">
+              <span class="help-block">
+                <strong>What the fuck</strong>
+              </span>
+            </div>
+          </div>
+        @endif
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
-  <!-- if there are login errors, show them here -->
-  {{ $errors->first('username') }}
-  {{ $errors->first('password') }}
-  <div class="row">
-    <div class="col-md-12">
+              <input type="text"  name="username" class="form-control"  placeholder="Usuario" value="{{ old('username') }}">
+              @if ($errors->has('username'))
+                <span class="help-block">
+                  <strong>{{ $errors->first('username') }}</strong>
+                </span>
+              @endif
+            </div>
+          </div>
 
-      <input type="text"  name="username" class="form-control"  placeholder="Usuario">
+        </div>
+        <div class="row">
+          <div class="col-md-12 m-b-md">
+            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+              <input type="password" name="password" class="form-control" placeholder="Contraseña">
+              @if ($errors->has('password'))
+                <span class="help-block">
+                  <strong>{{ $errors->first('password') }}</strong>
+                </span>
+              @endif
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary" name="button">Ingresar</button>
+          </div>
+
+        </div>
+      </div>
     </div>
-
-  </div>
-  <div class="row">
-    <div class="col-md-12 m-b-md">
-
-      <input type="password" name="password" class="form-control" placeholder="Contraseña">
-    </div>
-  </div>
-  <div class="row">
-<div class="col-md-12">
-  <button type="submit" class="btn btn-primary" name="button">Ingresar</button>
-
-</div>
-
-  </div>
   </form>
-</div>
-</div>
 </body>
 </html>

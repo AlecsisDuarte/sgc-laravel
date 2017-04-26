@@ -16,10 +16,11 @@
             <?php if(Route::has('login')): ?>
                 <div class="top-right links">
                     <?php if(Auth::check()): ?>
-                        <a href="<?php echo e(url('/home')); ?>">Inicio</a>
+                        <a href="<?php echo e(url('/inicio')); ?>">Inicio</a>
+                        <a href="<?php echo e(url('/cerrarSesion')); ?>">Cerrar Sesion</a>
+
                     <?php else: ?>
-                        <a href="<?php echo e(url('/login')); ?>">Iniciar Sesion</a>
-                        <!-- <a href="<?php echo e(url('/register')); ?>">Registrarme</a> -->
+                        <a href="<?php echo e(url('/iniciarSesion')); ?>">Iniciar Sesion</a>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
@@ -27,14 +28,6 @@
             <div class="content">
                 <div class="title m-b-md">
                   Sistema de Gestión de Curso
-                </div>
-
-                 <div class="links">
-                    <!-- <a href="https://laravel.com/docs">Documentación</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a> -->
                 </div>
             </div>
         </div>

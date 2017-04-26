@@ -13,10 +13,17 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-Route::get('login', 'LoginController@showLogin')->name('login');
+Route::get('/bienvenido', function () {
+    return view('welcome');
+})->name('welcome');
 
-Route::post('login', 'LoginController@doLogin')->name('login');
+Route::get('/iniciarSesion', 'AuthController@showLogin')->name('login');
 
-Route::get('inicio', 'InicioController@showInicio')->name('inicio');
+Route::post('/iniciarSesion', 'AuthController@doLogin');
+
+Route::get('/inicio', 'InicioController@showInicio');
+
+Route::post('/cerrarSesion', 'AuthController@doLogout')->name('logout');
+Route::get('/cerrarSesion', 'AuthController@doLogout')->name('logout');

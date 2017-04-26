@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/navbar/nav.css">
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container">
 		<div class="navbar-header">

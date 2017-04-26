@@ -28,8 +28,8 @@ class User extends Authenticatable
     ];
 
     protected function find($username){
-      return DB::table('users')->find('$username');
-      
+      return DB::table('usuarios')->find('$username');
+
     }
 
 }
