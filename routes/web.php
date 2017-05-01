@@ -13,4 +13,17 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get('/bienvenido', function () {
+    return view('welcome');
+})->name('welcome');
+
+Route::get('/iniciarSesion', 'AuthController@showLogin')->name('login');
+
+Route::post('/iniciarSesion', 'AuthController@doLogin');
+
+Route::get('/inicio', 'InicioController@showInicio');
+
+Route::post('/cerrarSesion', 'AuthController@doLogout')->name('logout');
+Route::get('/cerrarSesion', 'AuthController@doLogout')->name('logout');
