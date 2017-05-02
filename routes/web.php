@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
+  if(Auth::guest()){
     return view('welcome');
+  }else{
+    return redirect('inicio');
+  }
 })->name('home');
 
 Route::get('/bienvenido', function () {
