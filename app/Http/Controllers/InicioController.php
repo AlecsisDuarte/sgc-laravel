@@ -15,4 +15,10 @@ class InicioController extends Controller
     {
       return view('home');
     }
+
+    public function showCursos(){
+      return view('cursos');
+    }
+
+
 }

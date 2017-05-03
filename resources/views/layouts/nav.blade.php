@@ -44,7 +44,7 @@
               </a>
 						</li>
 						<li>
-								<a href="#">Profesores</a>
+								<a href="{{  url('/cursos') }}">Cursos</a>
 						</li>
 						<li>
 								<a href="#">About</a>
