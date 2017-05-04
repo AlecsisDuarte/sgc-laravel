@@ -21,7 +21,7 @@ class AuthController extends Controller
       //Validamos los campos
       $this->validate(request(),[
         'username' => 'required', // make sure the email is an actual email
-        'password' => 'required|alphaNum|min:6' // password can only be alphanumeric and has to be greater than 3 characters
+        'password' => 'required|alphaNum|min:4' // password can only be alphanumeric and has to be greater than 3 characters
       ]);
 
       if(! auth()->attempt(request(['username','password']))){

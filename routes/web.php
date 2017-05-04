@@ -19,15 +19,17 @@ Route::get('/', function () {
   }
 })->name('home');
 
-Route::get('/bienvenido', function () {
-    return view('welcome');
-})->name('welcome');
+// Route::get('/bienvenido', function () {
+//     return view('welcome');
+// })->name('welcome');
 
 Route::get('/iniciarSesion', 'AuthController@showLogin')->name('login');
 
 Route::post('/iniciarSesion', 'AuthController@doLogin');
 
 Route::get('/inicio', 'InicioController@showInicio');
+
+Route::get('/instrumentaciones', 'InicioController@showInstrumentacion');
 
 Route::post('/cerrarSesion', 'AuthController@doLogout')->name('logout');
 Route::get('/cerrarSesion', 'AuthController@doLogout')->name('logout');
