@@ -14,17 +14,17 @@ class insertarUsuarios extends Seeder
         DB::table('users')->insert([
           'username' => 'alexis',
           'password' => Hash::make('alexis'),
-          // 'remember_token' => str_random(10)
+          'remember_token' => str_random(10)
         ]);
         DB::table('users')->insert([
           'username' => 'carlos',
           'password' => Hash::make('carlos'),
-          // 'remember_token' => str_random(10)
+          'remember_token' => str_random(10)
         ]);
         DB::table('users')->insert([
           'username' => 'tomas',
           'password' => Hash::make('tomas'),
-          // 'remember_token' => str_random(10)
+          'remember_token' => str_random(10)
         ]);
     }
 }

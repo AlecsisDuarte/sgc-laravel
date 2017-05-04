@@ -44,9 +44,9 @@
               </a>
 						</li>
 						<li>
-								<a href="{{  url('/cursos') }}">Cursos</a>
+								<a href="{{  url('/instrumentacion') }}">Instrumentación</a>
 						</li>
-						<li>
+						{{-- <li>
 								<a href="#">About</a>
 						</li>
 						<li>
@@ -71,7 +71,7 @@
 						</li>
 						<li>
 								<a href="#">Contact</a>
-						</li>
+						</li> --}}
 						<li>
               <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();
