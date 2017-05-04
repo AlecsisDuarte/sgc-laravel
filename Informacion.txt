@@ -1,0 +1,12 @@
+El diagrama de la base de datos se encuentra en:
+https://repository.genmymodel.com/alexismiguelduarte/Sistema-Gestion-Curso?utm_source=dashboard
+
+Las actividades:
+  -Docente:
+  https://repository.genmymodel.com/alexismiguelduarte/Docente
+
+  -Administrador:
+  https://repository.genmymodel.com/alexismiguelduarte/Administrador
+
+  -Jefe de Departamento:
+  https://repository.genmymodel.com/alexismiguelduarte/JefeDepartamento

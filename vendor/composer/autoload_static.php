@@ -3295,6 +3295,8 @@ class ComposerStaticInitb254e69e25ea5041133f13709a196e9f
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+        'subirPersonal' => __DIR__ . '/../..' . '/database/seeds/subirPersonal.php',
+        'subirTiposUsuarios' => __DIR__ . '/../..' . '/database/seeds/subirTiposUsuarios.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
