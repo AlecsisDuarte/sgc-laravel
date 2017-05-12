@@ -29,7 +29,7 @@ Route::post('/iniciarSesion', 'AuthController@doLogin');
 
 Route::get('/inicio', 'InicioController@showInicio');
 
-Route::get('/instrumentaciones', 'InicioController@showInstrumentacion');
+Route::get('/instrumentacion', 'InicioController@showInstrumentacion');
 
 Route::post('/cerrarSesion', 'AuthController@doLogout')->name('logout');
 Route::get('/cerrarSesion', 'AuthController@doLogout')->name('logout');

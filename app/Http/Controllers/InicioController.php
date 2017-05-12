@@ -17,7 +17,7 @@ class InicioController extends Controller
     }
 
     public function showInstrumentacion(){
-      return view('instrumentacion');
+      return view('instrumentacion.tabla');
     }
 
 
