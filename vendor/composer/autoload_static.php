@@ -301,9 +301,9 @@ class ComposerStaticInitb254e69e25ea5041133f13709a196e9f
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
+        'CreateCursosTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_23_194219_create_cursos_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateTableCursos' => __DIR__ . '/../..' . '/database/migrations/2017_05_02_174741_CreateTableCursos.php',
-        'CreateTablePersonal' => __DIR__ . '/../..' . '/database/migrations/2017_05_04_172225_createTablePersonal.php',
         'CreateTableTipoUsuario' => __DIR__ . '/../..' . '/database/migrations/2017_05_04_173513_createTableTipoUsuario.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'CreateUsuariosTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_24_024638_create_usuarios_table.php',
@@ -3295,7 +3295,6 @@ class ComposerStaticInitb254e69e25ea5041133f13709a196e9f
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
-        'subirPersonal' => __DIR__ . '/../..' . '/database/seeds/subirPersonal.php',
         'subirTiposUsuarios' => __DIR__ . '/../..' . '/database/seeds/subirTiposUsuarios.php',
     );
 

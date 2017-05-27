@@ -17,7 +17,9 @@ class InicioController extends Controller
     }
 
     public function showInstrumentacion(){
-      return view('instrumentacion.tabla');
+      $cursos = DB::table('cursos')->get();
+      return $cursos;
+      // return view('instrumentacion.tabla');
     }
 
 

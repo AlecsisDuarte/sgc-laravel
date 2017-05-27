@@ -30,9 +30,9 @@ return array(
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
+    'CreateCursosTable' => $baseDir . '/database/migrations/2017_05_23_194219_create_cursos_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateTableCursos' => $baseDir . '/database/migrations/2017_05_02_174741_CreateTableCursos.php',
-    'CreateTablePersonal' => $baseDir . '/database/migrations/2017_05_04_172225_createTablePersonal.php',
     'CreateTableTipoUsuario' => $baseDir . '/database/migrations/2017_05_04_173513_createTableTipoUsuario.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'CreateUsuariosTable' => $baseDir . '/database/migrations/2017_04_24_024638_create_usuarios_table.php',
@@ -3024,6 +3024,5 @@ return array(
     'phpDocumentor\\Reflection\\Types\\String_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/String_.php',
     'phpDocumentor\\Reflection\\Types\\This' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/This.php',
     'phpDocumentor\\Reflection\\Types\\Void_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Void_.php',
-    'subirPersonal' => $baseDir . '/database/seeds/subirPersonal.php',
     'subirTiposUsuarios' => $baseDir . '/database/seeds/subirTiposUsuarios.php',
 );

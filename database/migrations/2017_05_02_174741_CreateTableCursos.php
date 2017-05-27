@@ -13,7 +13,6 @@ class CreateTableCursos extends Migration
      */
     public function up()
     {
-      Schema::dropIfExists('cursos');
     }
 
     /**

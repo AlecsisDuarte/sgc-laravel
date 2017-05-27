@@ -29,7 +29,12 @@ Route::post('/iniciarSesion', 'AuthController@doLogin');
 
 Route::get('/inicio', 'InicioController@showInicio');
 
-Route::get('/instrumentacion', 'InicioController@showInstrumentacion');
+Route::get('/instrumentacion', function(){
+  $cursos = DB::table('cursos')->get();
+  return $cursos;
+
+});
+// Route::get('/instrumentacion', 'InicioController@showInstrumentacion');
 
 Route::post('/cerrarSesion', 'AuthController@doLogout')->name('logout');
 Route::get('/cerrarSesion', 'AuthController@doLogout')->name('logout');
