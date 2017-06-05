@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
 
-                  <table class="table table-hover" style="width: 100%;">
+                <table id="table_cursos" class="table table-hover" style="width: 100%;">
 
                     <thead>
                       <tr>
@@ -20,19 +20,39 @@
                       </tr>
                     </thead>
 
-                    <?php
-                      $cursos = DB::table('cursos')->orderBy('id')->get();
-                    ?>
+                    <?php $i = 0;?>
+
                     @foreach ($cursos as $curso)
-                    <tr>
-                       <th><a href="{{ url('/inicio') }}">{{$curso->id}}</a></th><!--cambiara url por el que corresponde-->
-                       <th>{{$curso->clave}}</th>
-                       <th>{{$curso->Nombre}}</th>
-                       <th>{{$curso->Grupo}}</th>
+                    <?php $i = $i+1;?>
+                    <tr id="<?php echo $i; ?>">
+                       <td>{{$curso->id}}</td>
+                       <td>{{$curso->clave}}</td>
+                       <td>{{$curso->nombre_materia}}</td>
+                       <td>{{$curso->grupo}}</td>
                      </tr>
                     @endforeach
 
                   </table>
+
+
+<script>
+
+    var id,clave,table = document.getElementById('table_cursos'),rIndex;
+
+    for(var i = 0; i < table.rows.length; i++){
+      table.rows[i].onclick = function()
+      {
+        rIndex = this.rowIndex;
+        id = document.getElementById(rIndex).cells[0].innerText;
+        clave = document.getElementById(rIndex).cells[1].innerText;
+
+        document.location.href = "inicio?id="+id+"?clave="+clave;//en vez de inicio a la nueva vista donde se mostrara lo que se debe
+        //console.log(document.getElementById(rIndex).cells[0].innerText);
+      }
+    }
+
+</script>
+
 
                 </div>
             </div>

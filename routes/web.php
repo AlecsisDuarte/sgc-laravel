@@ -29,13 +29,13 @@ Route::post('/iniciarSesion', 'AuthController@doLogin');
 
 Route::get('/inicio', 'InicioController@showInicio');
 
-/*Route::get('/instrumentacion', function(){
-  $cursos = DB::table('cursos')->get();
+Route::get('/instrumentacion', function(){
+  $cursos = DB::table('cursos')->orderBy('nombre_materia')->get();
   return view('instrumentacion', ['cursos' => $cursos]);
 //  return $cursos;
 
-});*/
-Route::get('/instrumentacion', 'InicioController@showInstrumentacion');
+});
+//Route::get('/instrumentacion', 'InicioController@showInstrumentacion');
 
 Route::post('/cerrarSesion', 'AuthController@doLogout')->name('logout');
 Route::get('/cerrarSesion', 'AuthController@doLogout')->name('logout');
