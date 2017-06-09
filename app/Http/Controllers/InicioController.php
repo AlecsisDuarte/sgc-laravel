@@ -16,12 +16,9 @@ class InicioController extends Controller
       return view('home');
     }
 
-    public function showInstrumentacion(){
-//     $cursos = DB::table('cursos')->get();
-//      return $cursos;
-        return view('instrumentacion');
-      //return view('instrumentacion', ['cursos' => $cursos]);
+    public function showUpload()
+    {
+      return view('upload');
     }
-
 
 }

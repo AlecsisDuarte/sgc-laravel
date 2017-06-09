@@ -8,7 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Inicio</title>
+    @section('title') Inicio @endsection
+    <title>@yield('title')</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -33,6 +34,7 @@
 		<!-- Sidebar -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
 				<ul class="nav sidebar-nav">
+
 						<li class="sidebar-brand">
               <a href="{{ url('/inicio') }}">
                 @if(isset($pageName))
@@ -40,9 +42,8 @@
                 @else
                   Gestion de Curso
                 @endif
-
               </a>
-						</li>
+            </li>
 						<li>
 								<a href="{{  url('/instrumentacion') }}">Instrumentación</a>
 						</li>
@@ -83,6 +84,9 @@
                   {{ csrf_field() }}
               </form>
 						</li>
+            <!--
+                Hola! {{ ucwords(Auth::user()->username) }}
+            -->
 				</ul>
 		</nav>
 		<!-- /#sidebar-wrapper -->
