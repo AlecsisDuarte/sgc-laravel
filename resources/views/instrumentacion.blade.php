@@ -35,7 +35,7 @@
 
                     @foreach ($cursos as $curso)
                     <?php $i = $i+1;?>
-                    <tr class="table-info" id="<?php echo $i; ?>" onclick="table_link();">
+                    <tr class="table-info" id="<?php echo $i; ?>" onmouseover="table_link();">
                        <td>{{$curso->id}}</td>
                        <td>{{$curso->clave}}</td>
                        <td>{{$curso->nombre_materia}}</td>
