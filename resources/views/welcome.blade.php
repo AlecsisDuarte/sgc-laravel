@@ -16,7 +16,8 @@
           </div>
 
 
-          <script>if(isMobile.any()){ alert('MOBILE');}else{alert('DES');}</script>
+          <script>if(isMobile.any())</script>
+
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
@@ -29,6 +30,20 @@
                 </div>
             @endif
 
+            <script>else</script>
+            <p>
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @if (Auth::check())
+                        <a href="{{ url('/inicio') }}">Inicio</a>
+                        <a href="{{ url('/cerrarSesion') }}">Cerrar Sesion</a>
+
+                    @else
+                        <a href="{{ url('/iniciarSesion') }}">Iniciar Sesion</a>
+                    @endif
+                </div>
+            @endif
+           </p>
 
             <div class="content">
                 <div class="title m-b-md">
