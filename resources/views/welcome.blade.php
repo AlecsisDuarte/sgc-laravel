@@ -7,12 +7,16 @@
 
         <title>Gestion del Curso</title>
         @include('plantillas.welcome')
+        <script type="text/javascript" src="{{ asset('js/code.js') }}"></script>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
           <div class="top-left links">
             <a href="http://www.itmexicali.edu.mx">Instituto Tecnologico de Mexicali</a>
           </div>
+
+
+          <script>if(isMobile.any()){ alert('MOBILE');}else{alert('DES');}</script>
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
@@ -24,6 +28,7 @@
                     @endif
                 </div>
             @endif
+
 
             <div class="content">
                 <div class="title m-b-md">
