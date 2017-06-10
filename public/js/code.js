@@ -66,3 +66,13 @@ function comprueba(value){
     }
 };
 //FIN FUNCTION
+
+window.onload = function() {
+  if(!isMobile.any()){
+    document.getElementById('desk').style.display = 'block';
+    document.getElementById('mobile').style.display = 'none';
+  }else{
+    document.getElementById('desk').style.display = 'none';
+    document.getElementById('mobile').style.display = 'block';
+  }
+}

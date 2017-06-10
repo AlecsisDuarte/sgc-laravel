@@ -10,40 +10,36 @@
         <script type="text/javascript" src="{{ asset('js/code.js') }}"></script>
     </head>
     <body>
+        <header>
+          @if (Route::has('login'))
+            <div align="center">
+                <div id="mobile" class="links">
+                    @if (Auth::check())
+                        <a href="{{ url('/inicio') }}">Inicio</a>
+                        <a href="{{ url('/cerrarSesion') }}">Cerrar Sesion</a>
+                    @else
+                        <a href="{{ url('/iniciarSesion') }}">Iniciar Sesion</a>
+                    @endif
+                </div>
+            </div>
+          @endif
+        </header>
+
         <div class="flex-center position-ref full-height">
           <div class="top-left links">
             <a href="http://www.itmexicali.edu.mx">Instituto Tecnologico de Mexicali</a>
           </div>
 
-
-          <script>if(isMobile.any())</script>
-
             @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/inicio') }}">Inicio</a>
-                        <a href="{{ url('/cerrarSesion') }}">Cerrar Sesion</a>
-
-                    @else
-                        <a href="{{ url('/iniciarSesion') }}">Iniciar Sesion</a>
-                    @endif
-                </div>
+                    <div id="desk" class="top-right links">
+                        @if (Auth::check())
+                            <a href="{{ url('/inicio') }}">Inicio</a>
+                            <a href="{{ url('/cerrarSesion') }}">Cerrar Sesion</a>
+                        @else
+                            <a href="{{ url('/iniciarSesion') }}">Iniciar Sesion</a>
+                        @endif
+                    </div>
             @endif
-
-            <script>else</script>
-            <p>
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/inicio') }}">Inicio</a>
-                        <a href="{{ url('/cerrarSesion') }}">Cerrar Sesion</a>
-
-                    @else
-                        <a href="{{ url('/iniciarSesion') }}">Iniciar Sesion</a>
-                    @endif
-                </div>
-            @endif
-           </p>
 
             <div class="content">
                 <div class="title m-b-md">
