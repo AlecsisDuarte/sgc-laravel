@@ -9,6 +9,7 @@
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "maatwebsite/laravel-sidebar": "~2.1",
+        "styde/html": "~1.0",
         "twbs/bootstrap": "^3.3"
     },
     "require-dev": {

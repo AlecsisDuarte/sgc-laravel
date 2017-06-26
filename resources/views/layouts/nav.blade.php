@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
+    @yield('styles')
 
     <!-- Scripts -->
     <script>
@@ -46,6 +47,9 @@
             </li>
 						<li>
 								<a href="{{  url('/instrumentacion') }}">Instrumentación</a>
+						</li>
+						<li>
+								<a href="{{  url('/upload') }}">Archivo</a>
 						</li>
 						{{-- <li>
 								<a href="#">About</a>

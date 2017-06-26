@@ -12,7 +12,7 @@ function table_link(){
         grupo = document.getElementById(rIndex).cells[3].innerText;
 
         //document.location.href = "instrumentacion?id="+id+"?clave="+clave;
-        document.getElementById(rIndex).className = "success";
+        //document.getElementById(rIndex).className = "success";
 
         document.getElementById('materia_nombre').innerHTML = nombre_materia;
         document.getElementById('materia_clave').innerHTML = clave;
@@ -22,7 +22,16 @@ function table_link(){
 
         //console.log(document.getElementById(rIndex).cells[0].innerText);
       }
+      /*table.rows[i].onmouseover = function()
+      {
+          document.getElementById(this.rowIndex).style.cursor = "pointer";
+      }*/
     }
+}
+
+function modal_to_upload(){
+  $('#modal_upload').modal('show');
+  $('#myModal').modal('hide');
 }
 
 /*function search(e, value){
@@ -76,3 +85,34 @@ window.onload = function() {
     document.getElementById('mobile').style.display = 'block';
   }
 }
+
+//Subir archivo dropzone
+
+Dropzone.options.myDropzone = {
+    autoProcessQueue: false,
+    uploadMultiple: true,
+    maxFilezise: 10,
+    maxFiles: 2,
+
+    init: function() {
+        var submitBtn = document.querySelector("#submit");
+        myDropzone = this;
+
+        submitBtn.addEventListener("click", function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            myDropzone.processQueue();
+        });
+        this.on("addedfile", function(file) {
+            alert("file uploaded");
+        });
+
+        this.on("complete", function(file) {
+            myDropzone.removeFile(file);
+        });
+
+        this.on("success",
+            myDropzone.processQueue.bind(myDropzone)
+        );
+    }
+};

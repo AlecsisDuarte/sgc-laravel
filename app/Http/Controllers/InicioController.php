@@ -21,4 +21,9 @@ class InicioController extends Controller
       return view('upload');
     }
 
+    public function showPdf()
+    {
+      return view('pdf');
+    }
+
 }

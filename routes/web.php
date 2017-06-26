@@ -31,11 +31,15 @@ Route::get('/inicio', 'InicioController@showInicio');
 
 //Route::get('/instrumentacion', 'InicioController@showInstrumentacion');
 Route::get('/instrumentacion', function(){
-  $cursos = DB::table('cursos')->orderBy('nombre_materia')->get();
+  $cursos = DB::table('cursos')->orderBy('id')->get();
   return view('instrumentacion', ['cursos' => $cursos]);
 });
 
 Route::get('/upload', 'InicioController@showUpload');
+Route::get('/pdf', 'InicioController@showPdf');
+
 
 Route::post('/cerrarSesion', 'AuthController@doLogout')->name('logout');
 Route::get('/cerrarSesion', 'AuthController@doLogout')->name('logout');
+
+Route::resource('file', 'FileController');
