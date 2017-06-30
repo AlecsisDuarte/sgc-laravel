@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Archivo;
+
 
 Route::get('/', function () {
   if(Auth::guest()){
@@ -25,21 +27,24 @@ Route::get('/', function () {
 
 Route::get('/iniciarSesion', 'AuthController@showLogin')->name('login');
 
-Route::post('/iniciarSesion', 'AuthController@doLogin');
+Route::post('/iniciarSesion', 'AuthController@doLogin')->name('login');
 
-Route::get('/inicio', 'InicioController@showInicio');
+Route::get('/inicio', 'InicioController@showInicio')->name('inicio');
 
 //Route::get('/instrumentacion', 'InicioController@showInstrumentacion');
 Route::get('/instrumentacion', function(){
   $cursos = DB::table('cursos')->orderBy('id')->get();
   return view('instrumentacion', ['cursos' => $cursos]);
-});
+})->name('instrumentacion');
 
-Route::get('/upload', 'InicioController@showUpload');
-Route::get('/pdf', 'InicioController@showPdf');
+//Route::get('/upload', 'InicioController@showUpload');
+Route::get('/pdf', 'InicioController@showPdf')->name('pdfViewer');
 
 
 Route::post('/cerrarSesion', 'AuthController@doLogout')->name('logout');
 Route::get('/cerrarSesion', 'AuthController@doLogout')->name('logout');
 
-Route::resource('file', 'FileController');
+Route::get('upload', 'ArchivosController@showUpload')->name('uploadView');
+Route::post('files','ArchivosController@doFiles')->name('uploadFiles');
+
+Route::get('listfiles','ArchivosController@doListFile')->name('listFiles');

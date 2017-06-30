@@ -94,7 +94,7 @@
               </thead>
                   <tr>
                     <th title="Subir Archivo" onclick="modal_to_upload();">
-                      <a href="/upload" class="glyphicon glyphicon-floppy-open" style="font-size:24px;color:blue;"></a>
+                      <a href="#" class="glyphicon glyphicon-floppy-open" style="font-size:24px;color:blue;"></a>
                     </th>
 
                     <th title="Ver Archivo">
@@ -112,6 +112,50 @@
               </table>
 
       </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button"
+           class="btn btn-default"
+           data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- MODAL SUBIR ARCHIVO -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <!-- SCRIPTS DROPEZONE -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<link href="{{ asset('/css/dropzone.css') }}" rel="stylesheet"> <!-- CSS DROPEZONE -->
+
+<div class="modal fade" id="modal_upload" tabindex="-1" role="dialog"
+     aria-labelledby="modal_uploadLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modal_uploadLabel">Cargar archivo!</h4>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="row">
+            <form action="{{ url('file-upload') }}" method="post" class="dropzone" id="my-awesome-dropzone">
+               {{ csrf_field() }}
+               <div class="dz-message">
+                   <h3>Drop Files here or click to upload.</h3>
+               </div>
+            </form>
+        </div>
 
       </div>
 

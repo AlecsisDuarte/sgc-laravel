@@ -26,8 +26,6 @@ class CreateTableTipoUsuario extends Migration
      */
     public function down()
     {
-        Schema::table('tipo_usuario', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('tipo_usuario');
     }
 }

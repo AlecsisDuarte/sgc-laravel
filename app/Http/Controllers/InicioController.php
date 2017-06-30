@@ -16,10 +16,10 @@ class InicioController extends Controller
       return view('home');
     }
 
-    public function showUpload()
+    /*public function showUpload()
     {
       return view('upload');
-    }
+    }*/
 
     public function showPdf()
     {
