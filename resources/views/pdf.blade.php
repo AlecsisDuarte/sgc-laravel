@@ -48,18 +48,18 @@ See https://github.com/adobe-type-tools/cmap-resources
 
 
 
-    <link rel="stylesheet" href="../pdf.js/web/viewer.css">
+    <link rel="stylesheet" href="../pdf_viewer/web/viewer.css">
 <!--#if !PRODUCTION-->
     <link rel="resource" type="application/l10n" href="locale/locale.properties">
 <!--#endif-->
 
 <!--#if !PRODUCTION-->
-    <script src="../pdf.js/src/shared/compatibility.js"></script>
+    <script src="../pdf_viewer/src/shared/compatibility.js"></script>
 <!--#endif-->
 
 <!--#if !PRODUCTION-->
-    <script src="../pdf.js/node_modules/systemjs/dist/system.js"></script>
-    <script src="../pdf.js/systemjs.config.js"></script>
+    <script src="../pdf_viewer/node_modules/systemjs/dist/system.js"></script>
+    <script src="../pdf_viewer/systemjs.config.js"></script>
 <!--#endif-->
 
 <!--#if (GENERIC && !MINIFIED) -->
@@ -67,7 +67,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 <!--#endif-->
 
 <!--#if !MINIFIED -->
-    <script src="../pdf.js/web/viewer.js"></script>
+    <script src="../pdf_viewer/web/viewer.js"></script>
 <!--#else-->
 <!--#include viewer-snippet-minified.html-->
 <!--#endif-->
