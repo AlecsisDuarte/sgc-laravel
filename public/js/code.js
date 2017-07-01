@@ -1,3 +1,4 @@
+var id_row;
 function table_link(){
 
     var id,clave,nombre_materia,grupo,table = document.getElementById('table_cursos'),rIndex;
@@ -18,7 +19,10 @@ function table_link(){
         document.getElementById('materia_clave').innerHTML = clave;
         document.getElementById('materia_grupo').innerHTML = grupo;
 
+        id_row = id;
+
         $('#myModal').modal('show');
+
 
         //console.log(document.getElementById(rIndex).cells[0].innerText);
       }
@@ -27,6 +31,38 @@ function table_link(){
           document.getElementById(this.rowIndex).style.cursor = "pointer";
       }*/
     }
+}
+
+function envia_param(){
+  post('listfiles', {id: id_row});//id_row es el id correspondiente al registro que dio click
+}
+
+function envia_param_file(dir,val){
+  post(dir, {file_id: val});
+}
+
+function post(path, params, method) {
+    method = method || "post"; // Set method to post by default if not specified.
+
+    // The rest of this code assumes you are not using a library.
+    // It can be made less wordy if you use one.
+    var form = document.createElement("form");
+    form.setAttribute("method", method);
+    form.setAttribute("action", path);
+
+    for(var key in params) {
+        if(params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+
+            form.appendChild(hiddenField);
+         }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
 }
 
 function modal_to_upload(){

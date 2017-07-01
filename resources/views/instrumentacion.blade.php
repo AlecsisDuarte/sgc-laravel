@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div id="header-table" class="panel-heading">Cursos</div>
 
                 <div class="panel-body">
@@ -59,6 +59,7 @@
 
 <!-- MODAL OPCIONES -->
 <link href="{{ asset('css/tabla_model.css') }}" rel="stylesheet">
+<meta name="csrf-token" content="<?php echo csrf_token() ?>">
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel" aria-hidden="true">
@@ -94,19 +95,18 @@
               </thead>
                   <tr>
                     <th title="Subir Archivo" onclick="modal_to_upload();">
-                      <a href="#" class="glyphicon glyphicon-floppy-open" style="font-size:24px;color:blue;"></a>
+                      <div class="glyphicon glyphicon-floppy-open" style="font-size:24px;color:blue;"></div>
                     </th>
-
-                    <th title="Ver Archivo">
-                      <a href="/pdf?file=archivos_pdf/instru.pdf" class="fa fa-file-pdf-o" style="font-size:24px;color:red"></a>
+                    <th title="Ver Archivo" onclick="envia_param()">
+                      <div class="fa fa-file-pdf-o" style="font-size:24px;color:red"></div>
                     </th>
                   </tr>
                   <tr id="modal-names">
                     <td>
-                      subir archivo
+                      subir archivos
                     </td>
                     <td>
-                      ver archivo
+                      ver archivos
                     </td>
                   </tr>
               </table>
@@ -130,9 +130,6 @@
 
 <!-- MODAL SUBIR ARCHIVO -->
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <!-- SCRIPTS DROPEZONE -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
 <link href="{{ asset('/css/dropzone.css') }}" rel="stylesheet"> <!-- CSS DROPEZONE -->
 
 <div class="modal fade" id="modal_upload" tabindex="-1" role="dialog"
@@ -146,18 +143,12 @@
         <h4 class="modal-title" id="modal_uploadLabel">Cargar archivo!</h4>
       </div>
 
-      <div class="modal-body">
 
-        <div class="row">
-            <form action="{{ url('file-upload') }}" method="post" class="dropzone" id="my-awesome-dropzone">
-               {{ csrf_field() }}
-               <div class="dz-message">
-                   <h3>Drop Files here or click to upload.</h3>
-               </div>
+            <form id="my-dropzone" action="files" method="post" class="dropzone" enctype="multipart/form-data">
+              {{ csrf_field() }}
             </form>
-        </div>
+            <div class="hidden" id="message" style="color:red"></div>
 
-      </div>
 
       <div class="modal-footer">
         <button type="button"

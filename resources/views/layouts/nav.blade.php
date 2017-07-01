@@ -52,7 +52,7 @@
 								<a href="{{  url('/upload') }}">Archivo</a>
 						</li>
 						<li>
-								<a href="{{  url('/listfiles') }}">Mis Archivos</a>
+								<a href="{{  url('/listmyfiles') }}">Mis Archivos</a>
 						</li>
 						{{-- <li>
 								<a href="#">About</a>

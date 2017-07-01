@@ -47,4 +47,9 @@ Route::get('/cerrarSesion', 'AuthController@doLogout')->name('logout');
 Route::get('upload', 'ArchivosController@showUpload')->name('uploadView');
 Route::post('files','ArchivosController@doFiles')->name('uploadFiles');
 
+Route::get('listmyfiles','ArchivosController@doListmyFile')->name('listmyFiles');
+
 Route::get('listfiles','ArchivosController@doListFile')->name('listFiles');
+Route::post('listfiles','ArchivosController@doListFile')->name('listFilesPost');
+
+Route::post('deletefile','ArchivosController@doDeleteFile')->name('deleteFiles');
